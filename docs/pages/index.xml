@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on SnowLynxSoftware</title>
+    <link>https://snowlynxsoftware.net/pages/</link>
+    <description>Recent content in Pages on SnowLynxSoftware</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://snowlynxsoftware.net/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://snowlynxsoftware.net/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowlynxsoftware.net/pages/about/</guid>
+      
+      <description>The idea of Snowlynx Software was originally created by me, Dylan Legendre, around 2014. At the time, that’s all it was–an idea. Any time I started on a new hobby project or idea it was under the name of Snowlynx Software. None of those projects ever came to fruition or seen actual daylight. Fast forward to October 2023 when I started working on something I really enjoyed, I created this website as a means to showcase all of my projects and get the word out!</description>
+      
+    </item>
+    
+  </channel>
+</rss>

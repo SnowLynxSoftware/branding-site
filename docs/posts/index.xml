@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on SnowLynxSoftware</title>
+    <link>https://snowlynxsoftware.net/posts/</link>
+    <description>Recent content in Posts on SnowLynxSoftware</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://snowlynxsoftware.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Open Galaxies Online - Part 1</title>
+      <link>https://snowlynxsoftware.net/posts/intro-ogo-pt1/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowlynxsoftware.net/posts/intro-ogo-pt1/</guid>
+      
+      <description>Announcing: Open Galaxies Online! Open Galaxies Online will be an open sourced, free-to-play, and persistent browser-based game (PBBG) in the genre of Sci-Fi 4X Strategy. The game is still in it&amp;rsquo;s very early design stages, but by making an announcement&amp;ndash;it&amp;rsquo;s real! The game will be completely open sourced (GPLv3) and available on Github. We want the community to be the driving force behind the development team&amp;rsquo;s priorities as well as having visibility into the codebase.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
