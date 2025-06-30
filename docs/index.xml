@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on SnowLynxSoftware</title>
-    <link>https://snowlynxsoftware.net/</link>
-    <description>Recent content in Home on SnowLynxSoftware</description>
+    <title>Home on </title>
+    <link>/</link>
+    <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://snowlynxsoftware.net/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introducing OpenZooSim - Part 1</title>
-      <link>https://snowlynxsoftware.net/posts/intro-ozs-pt1/</link>
-      <pubDate>Wed, 03 Jan 2024 00:00:00 +0000</pubDate>
+      <title>Introducing Open Trivia Online!</title>
+      <link>/posts/intro-oto-2025-06-30/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://snowlynxsoftware.net/posts/intro-ozs-pt1/</guid>
+      <guid>/posts/intro-oto-2025-06-30/</guid>
       
-      <description>Announcing: OpenZooSim! OpenZooSim will be an open source, free-to-play, and persistent browser-based game (PBBG) in the genre of Simulation/Strategy. The game is still in it&amp;rsquo;s very early design stages, but by making an announcement&amp;ndash;it&amp;rsquo;s real! The game will be completely open sourced (GPLv3) and available on Github. We want the community to be the driving force behind the development team&amp;rsquo;s priorities as well as having visibility into the codebase. This offers not only transparency into how the game works or data is being used&amp;ndash;but also offers itself as a learning tool for other inspired developers to learn from our mistakes (or from our successes!</description>
+      <description>&lt;h2 id=&#34;announcing-open-trivia-online&#34;&gt;Announcing: Open Trivia Online!&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://opentriviaonline.com/&#34;&gt;Open Trivia Online&lt;/a&gt; will be a free to play and open source trivia game played online. You will be able to compete in leaderboards based on categories. You can challenge other players, compete in tournaments, host private games with multiple players, and more. Additionally I will allow players to upload their own custom trivia decks (to be approved through moderation). The game is still in its infancy at the moment.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>About</title>
-      <link>https://snowlynxsoftware.net/pages/about/</link>
+      <link>/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowlynxsoftware.net/pages/about/</guid>
+      <guid>/pages/about/</guid>
       
-      <description>The idea of Snowlynx Software was originally created by me, Dylan Legendre, around 2014. At the time, that’s all it was–an idea. Any time I started on a new hobby project or idea it was under the name of Snowlynx Software. None of those projects ever came to fruition or seen actual daylight. Fast forward to October 2023 when I started working on something I really enjoyed, I created this website as a means to showcase all of my projects and get the word out!</description>
+      <description>&lt;p&gt;The idea of Snowlynx Software was originally created by me, Dylan Legendre, around 2014. At the time, that’s all it was–an idea. Any time I started on a new hobby project or idea it was under the name of Snowlynx Software. None of those projects ever came to fruition or seen actual daylight. Fast forward to October 2023 when I started working on something I really enjoyed, I created this website as a means to showcase all of my projects and get the word out!&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/pages/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/projects/</guid>
+      
+      <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://opentriviaonline.com&#34;&gt;Open Trivia Online&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Open Trivia Online is a free online trivia game.&lt;/p&gt;</description>
       
     </item>
     
