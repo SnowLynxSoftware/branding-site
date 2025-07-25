@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Modern TypeScript Patterns for Enterprise Applications | Snow Lynx
+      Software
+    </title>
+    <meta
+      name="description"
+      content="Explore advanced TypeScript patterns that improve code maintainability and scalability in large enterprise applications."
+    />
+    <meta
+      name="keywords"
+      content="TypeScript patterns, enterprise applications, software architecture, dependency injection, decorators"
+    />
+    <meta name="author" content="Snow Lynx Software LLC" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://snowlynxsoftware.com/blog/modern-typescript-patterns.html"
+    />
+    <meta
+      property="og:title"
+      content="Modern TypeScript Patterns for Enterprise Applications"
+    />
+    <meta
+      property="og:description"
+      content="Explore advanced TypeScript patterns that improve code maintainability and scalability in large enterprise applications."
+    />
+    <meta
+      property="og:image"
+      content="https://snowlynxsoftware.com/images/blog/typescript-patterns.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://snowlynxsoftware.com/blog/modern-typescript-patterns.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Modern TypeScript Patterns for Enterprise Applications"
+    />
+    <meta
+      property="twitter:description"
+      content="Explore advanced TypeScript patterns that improve code maintainability and scalability in large enterprise applications."
+    />
+    <meta
+      property="twitter:image"
+      content="https://snowlynxsoftware.com/images/blog/typescript-patterns.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Prism.js for syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Modern TypeScript Patterns for Enterprise Applications",
+        "description": "Explore advanced TypeScript patterns that improve code maintainability and scalability in large enterprise applications.",
+        "author": {
+          "@type": "Organization",
+          "name": "Snow Lynx Software LLC"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Snow Lynx Software LLC",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://snowlynxsoftware.com/images/logo.png"
+          }
+        },
+        "datePublished": "2025-03-15",
+        "dateModified": "2025-03-15",
+        "image": "https://snowlynxsoftware.com/images/blog/typescript-patterns.jpg"
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">
+          <i class="fas fa-snowflake text-primary me-2"></i>Snow Lynx Software
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="py-5 mt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mb-4">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="../index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Modern TypeScript Patterns
+                </li>
+              </ol>
+            </nav>
+
+            <!-- Article Meta -->
+            <div class="article-meta mb-4">
+              <div class="d-flex flex-wrap align-items-center gap-3">
+                <span class="badge bg-primary">TypeScript</span>
+                <span class="badge bg-secondary">Enterprise</span>
+                <span class="text-muted">
+                  <i class="fas fa-calendar me-1"></i>March 15, 2025
+                </span>
+                <span class="text-muted">
+                  <i class="fas fa-clock me-1"></i>8 min read
+                </span>
+                <span class="text-muted">
+                  <i class="fas fa-user me-1"></i>Snow Lynx Software Team
+                </span>
+              </div>
+            </div>
+
+            <!-- Article Title -->
+            <header class="mb-4">
+              <h1 class="display-4 fw-bold mb-3">
+                Modern TypeScript Patterns for Enterprise Applications
+              </h1>
+              <p class="lead">
+                Explore advanced TypeScript patterns that improve code
+                maintainability and scalability in large enterprise
+                applications. Learn about dependency injection, decorators,
+                generics, and architectural patterns that make your TypeScript
+                code more robust and easier to maintain.
+              </p>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="mb-5">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                class="img-fluid rounded shadow"
+                alt="TypeScript code on screen"
+              />
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+              <p>
+                TypeScript has evolved from a simple type checker to a powerful
+                tool for building large-scale applications. As enterprise
+                applications grow in complexity, the patterns and practices we
+                use become crucial for maintainability, scalability, and team
+                productivity. In this article, we'll explore advanced TypeScript
+                patterns that have proven effective in enterprise environments.
+              </p>
+
+              <h2>1. Dependency Injection Patterns</h2>
+              <p>
+                Dependency injection is fundamental to building testable and
+                maintainable enterprise applications. TypeScript's decorator
+                system and metadata reflection capabilities make it possible to
+                implement sophisticated DI patterns.
+              </p>
+
+              <h3>Constructor Injection with Decorators</h3>
+              <pre><code class="language-typescript">// Service decorator for automatic registration
+function Injectable(token?: string) {
+  return function (constructor: any) {
+    Reflect.defineMetadata('injectable', true, constructor);
+    Reflect.defineMetadata('token', token || constructor.name, constructor);
+  };
+}
+
+// Inject decorator for parameter injection
+function Inject(token: string) {
+  return function (target: any, propertyKey: string | symbol | undefined, parameterIndex: number) {
+    const existingTokens = Reflect.getMetadata('inject:tokens', target) || [];
+    existingTokens[parameterIndex] = token;
+    Reflect.defineMetadata('inject:tokens', existingTokens, target);
+  };
+}
+
+@Injectable()
+class UserService {
+  constructor(
+    @Inject('DatabaseConnection') private db: DatabaseConnection,
+    @Inject('Logger') private logger: Logger
+  ) {}
+
+  async getUser(id: string): Promise&lt;User&gt; {
+    this.logger.info(`Fetching user ${id}`);
+    return this.db.query('SELECT * FROM users WHERE id = ?', [id]);
+  }
+}</code></pre>
+
+              <h2>2. Advanced Generic Patterns</h2>
+              <p>
+                Generics in TypeScript allow us to create reusable, type-safe
+                components. Here are some advanced patterns that are
+                particularly useful in enterprise applications.
+              </p>
+
+              <h3>Generic Repository Pattern</h3>
+              <pre><code class="language-typescript">interface BaseEntity {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+interface Repository&lt;T extends BaseEntity&gt; {
+  findById(id: string): Promise&lt;T | null&gt;;
+  findAll(filter?: Partial&lt;T&gt;): Promise&lt;T[]&gt;;
+  create(entity: Omit&lt;T, 'id' | 'createdAt' | 'updatedAt'&gt;): Promise&lt;T&gt;;
+  update(id: string, updates: Partial&lt;T&gt;): Promise&lt;T&gt;;
+  delete(id: string): Promise&lt;boolean&gt;;
+}
+
+class BaseRepository&lt;T extends BaseEntity&gt; implements Repository&lt;T&gt; {
+  constructor(private entityName: string) {}
+
+  async findById(id: string): Promise&lt;T | null&gt; {
+    // Implementation here
+    return null;
+  }
+
+  async findAll(filter?: Partial&lt;T&gt;): Promise&lt;T[]&gt; {
+    // Implementation here
+    return [];
+  }
+
+  // ... other methods
+}
+
+// Usage
+interface User extends BaseEntity {
+  email: string;
+  name: string;
+}
+
+const userRepository: Repository&lt;User&gt; = new BaseRepository&lt;User&gt;('users');</code></pre>
+
+              <h2>3. Event-Driven Architecture Patterns</h2>
+              <p>
+                Event-driven patterns help decouple components and make systems
+                more scalable. TypeScript's type system can ensure type safety
+                across event boundaries.
+              </p>
+
+              <h3>Type-Safe Event Bus</h3>
+              <pre><code class="language-typescript">// Define event types
+interface EventMap {
+  'user:created': { userId: string; email: string };
+  'user:updated': { userId: string; changes: Partial&lt;User&gt; };
+  'order:placed': { orderId: string; userId: string; total: number };
+}
+
+type EventHandler&lt;T&gt; = (data: T) => void | Promise&lt;void&gt;;
+
+class TypedEventBus {
+  private handlers = new Map&lt;string, Set&lt;EventHandler&lt;any&gt;&gt;&gt;();
+
+  on&lt;K extends keyof EventMap&gt;(
+    event: K,
+    handler: EventHandler&lt;EventMap[K]&gt;
+  ): void {
+    if (!this.handlers.has(event)) {
+      this.handlers.set(event, new Set());
+    }
+    this.handlers.get(event)!.add(handler);
+  }
+
+  emit&lt;K extends keyof EventMap&gt;(
+    event: K,
+    data: EventMap[K]
+  ): void {
+    const eventHandlers = this.handlers.get(event);
+    if (eventHandlers) {
+      eventHandlers.forEach(handler =&gt; handler(data));
+    }
+  }
+}
+
+// Usage with full type safety
+const eventBus = new TypedEventBus();
+
+eventBus.on('user:created', (data) =&gt; {
+  // data is automatically typed as { userId: string; email: string }
+  console.log(`New user created: ${data.email}`);
+});
+
+eventBus.emit('user:created', { 
+  userId: '123', 
+  email: 'user@example.com' 
+});</code></pre>
+
+              <h2>4. Factory and Builder Patterns</h2>
+              <p>
+                Factory and builder patterns help manage object creation
+                complexity, especially when dealing with objects that have many
+                optional parameters or complex initialization logic.
+              </p>
+
+              <h3>Generic Factory Pattern</h3>
+              <pre><code class="language-typescript">interface ConfigurableService {
+  configure(config: any): void;
+}
+
+class ServiceFactory {
+  private static services = new Map&lt;string, new() =&gt; any&gt;();
+
+  static register&lt;T extends ConfigurableService&gt;(
+    name: string,
+    serviceClass: new() =&gt; T
+  ): void {
+    this.services.set(name, serviceClass);
+  }
+
+  static create&lt;T extends ConfigurableService&gt;(
+    name: string,
+    config?: any
+  ): T {
+    const ServiceClass = this.services.get(name);
+    if (!ServiceClass) {
+      throw new Error(`Service ${name} not registered`);
+    }
+    
+    const service = new ServiceClass();
+    if (config) {
+      service.configure(config);
+    }
+    
+    return service as T;
+  }
+}
+
+// Registration
+ServiceFactory.register('emailService', EmailService);
+ServiceFactory.register('smsService', SMSService);
+
+// Usage
+const emailService = ServiceFactory.create('emailService', {
+  apiKey: 'your-api-key',
+  defaultFrom: 'noreply@example.com'
+});</code></pre>
+
+              <h2>5. Error Handling Patterns</h2>
+              <p>
+                Robust error handling is crucial in enterprise applications.
+                TypeScript's union types and discriminated unions provide
+                powerful tools for type-safe error handling.
+              </p>
+
+              <h3>Result Pattern for Error Handling</h3>
+              <pre><code class="language-typescript">type Result&lt;T, E = Error&gt; = Success&lt;T&gt; | Failure&lt;E&gt;;
+
+interface Success&lt;T&gt; {
+  success: true;
+  data: T;
+}
+
+interface Failure&lt;E&gt; {
+  success: false;
+  error: E;
+}
+
+function success&lt;T&gt;(data: T): Success&lt;T&gt; {
+  return { success: true, data };
+}
+
+function failure&lt;E&gt;(error: E): Failure&lt;E&gt; {
+  return { success: false, error };
+}
+
+// Usage in service methods
+class UserService {
+  async getUser(id: string): Promise&lt;Result&lt;User, 'NOT_FOUND' | 'DATABASE_ERROR'&gt;&gt; {
+    try {
+      const user = await this.userRepository.findById(id);
+      if (!user) {
+        return failure('NOT_FOUND' as const);
+      }
+      return success(user);
+    } catch (error) {
+      return failure('DATABASE_ERROR' as const);
+    }
+  }
+}
+
+// Type-safe error handling
+const result = await userService.getUser('123');
+if (result.success) {
+  // result.data is typed as User
+  console.log(result.data.email);
+} else {
+  // result.error is typed as 'NOT_FOUND' | 'DATABASE_ERROR'
+  if (result.error === 'NOT_FOUND') {
+    return res.status(404).json({ message: 'User not found' });
+  }
+}</code></pre>
+
+              <h2>Conclusion</h2>
+              <p>
+                These TypeScript patterns provide a solid foundation for
+                building maintainable, scalable enterprise applications. By
+                leveraging TypeScript's type system, decorators, and advanced
+                features, we can create code that is not only robust and
+                performant but also easy to understand and modify.
+              </p>
+
+              <p>
+                The key to successful enterprise application development is
+                choosing the right patterns for your specific use case. Start
+                with simpler patterns and gradually introduce more advanced ones
+                as your application grows in complexity.
+              </p>
+
+              <p>
+                Remember that these patterns are tools to solve specific
+                problems. Always consider the trade-offs between complexity,
+                maintainability, and performance when deciding which patterns to
+                implement in your projects.
+              </p>
+            </div>
+
+            <!-- Article Footer -->
+            <footer class="article-footer mt-5 pt-4 border-top">
+              <div class="row">
+                <div class="col-md-8">
+                  <h5>About the Author</h5>
+                  <p>
+                    The Snow Lynx Software team consists of experienced software
+                    engineers specializing in modern web development, cloud
+                    architecture, and enterprise software solutions.
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <h5>Share This Article</h5>
+                  <div class="social-share">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2">
+                      <i class="fab fa-twitter"></i> Tweet
+                    </a>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2">
+                      <i class="fab fa-linkedin"></i> Share
+                    </a>
+                    <a href="#" class="btn btn-outline-primary btn-sm">
+                      <i class="fab fa-facebook"></i> Share
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+
+            <!-- Related Articles -->
+            <section class="related-articles mt-5 pt-4 border-top">
+              <h4 class="mb-4">Related Articles</h4>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <a
+                          href="cloud-architecture-best-practices.html"
+                          class="text-decoration-none"
+                        >
+                          Cloud Architecture Best Practices
+                        </a>
+                      </h6>
+                      <small class="text-muted">February 28, 2025</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                      <h6 class="card-title">
+                        <a
+                          href="security-first-development.html"
+                          class="text-decoration-none"
+                        >
+                          Security-First Development Practices
+                        </a>
+                      </h6>
+                      <small class="text-muted">December 20, 2024</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 Snow Lynx Software LLC. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="social-links">
+              <a
+                href="https://linkedin.com/company/snowlynxsoftware"
+                class="text-white me-3"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+              <a
+                href="https://github.com/snowlynxsoftware"
+                class="text-white me-3"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github fa-lg"></i>
+              </a>
+              <a
+                href="https://twitter.com/snowlynxsoftware"
+                class="text-white me-3"
+                aria-label="Twitter"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </a>
+              <a
+                href="https://facebook.com/snowlynxsoftware"
+                class="text-white me-3"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <a
+                href="https://instagram.com/snowlynxsoftware"
+                class="text-white"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+
+    <!-- Article-specific styles -->
+    <style>
+      .article-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .article-content h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e9ecef;
+      }
+
+      .article-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .article-content pre {
+        margin: 1.5rem 0;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+
+      .article-content code {
+        font-family: "Fira Code", monospace;
+        font-size: 0.9rem;
+      }
+
+      .social-share .btn {
+        border-radius: 20px;
+      }
+
+      .breadcrumb-item a {
+        text-decoration: none;
+        color: var(--primary-color);
+      }
+
+      .related-articles .card:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease;
+      }
+    </style>
+  </body>
+</html>
