@@ -51,29 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(el);
   });
 
-  // Loading state for buttons
-  document.querySelectorAll(".btn").forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      // Don't add loading state for external links or hash links
-      if (
-        this.getAttribute("href") &&
-        !this.getAttribute("href").startsWith("#") &&
-        !this.getAttribute("href").startsWith("http")
-      ) {
-        this.classList.add("loading");
-        const originalText = this.innerHTML;
-        this.innerHTML =
-          '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
-
-        // Remove loading state after a short delay
-        setTimeout(() => {
-          this.classList.remove("loading");
-          this.innerHTML = originalText;
-        }, 1000);
-      }
-    });
-  });
-
   // Enhanced hover effects for service cards
   document.querySelectorAll(".service-card").forEach((card) => {
     card.addEventListener("mouseenter", function () {
@@ -116,21 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Keyboard navigation enhancement
-  document.addEventListener("keydown", function (e) {
-    // Press 'H' to go to home
-    if (e.key === "h" || e.key === "H") {
-      if (e.ctrlKey || e.metaKey) return; // Don't interfere with browser shortcuts
-      window.location.href = "index.html";
-    }
-
-    // Press 'C' to go to contact
-    if (e.key === "c" || e.key === "C") {
-      if (e.ctrlKey || e.metaKey) return;
-      window.location.href = "contact.html";
-    }
-  });
-
   // Social media link tracking (for analytics when implemented)
   document.querySelectorAll(".social-links a").forEach((link) => {
     link.addEventListener("click", function () {
@@ -149,28 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Preload critical images
-  const criticalImages = [
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  ];
-
-  criticalImages.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
-
-  // Performance monitoring
-  if ("performance" in window) {
-    window.addEventListener("load", function () {
-      setTimeout(() => {
-        const perfData = performance.getEntriesByType("navigation")[0];
-        console.log(
-          `Page load time: ${perfData.loadEventEnd - perfData.loadEventStart}ms`
-        );
-      }, 0);
-    });
-  }
-
   // Add subtle parallax effect to hero section
   window.addEventListener("scroll", function () {
     const scrolled = window.pageYOffset;
@@ -181,6 +121,4 @@ document.addEventListener("DOMContentLoaded", function () {
       parallaxElement.style.transform = `translateY(${speed}px)`;
     }
   });
-
-  console.log("Snow Lynx Software LLC website loaded successfully! 🚀");
 });

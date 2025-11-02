@@ -216,7 +216,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions or issues with this website template:
 
-- Email: contact@snowlynxsoftware.com
+- Email: support@snowlynxsoftware.com
 - GitHub Issues: Create an issue in this repository
 
 ---
