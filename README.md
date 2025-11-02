@@ -27,22 +27,12 @@ snowlynx-site/
 │   └── main.js             # Custom JavaScript
 └── blog/
     ├── modern-typescript-patterns.html
-    ├── cloud-architecture-best-practices.html
-    ├── ai-integration-strategies.html
-    └── database-selection-guide.html
+    ├── ...
 ```
 
 ## 🚀 Getting Started
 
-### Option 1: GitHub Pages (Recommended)
-
-1. Push this repository to GitHub
-2. Go to repository Settings > Pages
-3. Select "Deploy from a branch"
-4. Choose "main" branch and "/ (root)" folder
-5. Your site will be available at `https://yourusername.github.io/repository-name`
-
-### Option 2: Local Development
+### Local Development
 
 1. Clone or download this repository
 2. Open `index.html` in a web browser
@@ -50,21 +40,8 @@ snowlynx-site/
 
    ```bash
    # Using Python
-   python -m http.server 8000
-
-   # Using Node.js
-   npx serve .
-
-   # Using PHP
-   php -S localhost:8000
+   python3 -m http.server 8000
    ```
-
-### Option 3: Netlify/Vercel
-
-1. Connect your GitHub repository
-2. Set build command to: (none required)
-3. Set publish directory to: `/` (root)
-4. Deploy automatically on push
 
 ## 🛠 Technologies Used
 
@@ -144,14 +121,9 @@ Edit the CSS custom properties in `css/style.css`:
 }
 ```
 
-### Adding Analytics
-
-Uncomment and configure your preferred analytics solution:
+### Analytics
 
 - Google Analytics
-- Umami (recommended for privacy)
-- Plausible
-- Custom tracking
 
 ### Modifying Navigation
 
@@ -181,7 +153,6 @@ Update the navigation in all HTML files to add/remove pages:
 - No server-side code or databases
 - All external resources loaded via CDN with integrity checks
 - No sensitive information exposed in source code
-- HTTPS recommended for production deployment
 
 ## 📦 Dependencies
 
@@ -192,13 +163,6 @@ All dependencies are loaded via CDN:
 - Google Fonts (CSS)
 
 No npm/build process required!
-
-## 🐛 Known Issues
-
-- Blog code syntax highlighting requires Prism.js (already included)
-- Social media links are placeholders - update with real profiles
-- Contact form functionality would require backend integration
-- Images are placeholder URLs - replace with actual company images
 
 ## 🤝 Contributing
 
